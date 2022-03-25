@@ -1,3 +1,4 @@
+import java.util.Arrays;
 import java.util.HashMap;
 
 import static java.lang.Character.isLowerCase;
@@ -17,15 +18,16 @@ public class ROT13 {
 
     }
 
-    public static HashMap<Character, Character> custRot(char s, char cf) {
+    public static HashMap<Character, Character> custRot(String s, char cf) {
         final HashMap<Character, Character> custCipher = new HashMap<>();
+        char[] cArray = s.toCharArray();
         do {
-            custCipher.put((char) ((s++ % 26) + 97), (char) ((cf++ % 26) + 97));
-        } while (custCipher.size() < 26);
+            custCipher.put((char) ((cArray[0]++ % s.length()) + 97), (char) ((cf++ % s.length()) + 97));
+        } while (custCipher.size() < s.length());
 
         do {
-            custCipher.put(Character.toUpperCase(((char) ((s++ % 26) + 97))), Character.toUpperCase((char) ((cf++ % 26) + 97)));
-        } while (custCipher.size() < 52);
+            custCipher.put(Character.toUpperCase(((char) ((cArray[0]++ % s.length()) + 97))), Character.toUpperCase((char) ((cf++ % s.length()) + 97)));
+        } while (custCipher.size() < s.length() * 2);
 
         return custCipher;
 
@@ -77,11 +79,11 @@ public class ROT13 {
     public static String rotate(String s, Character c) {
         char[] charArray = s.toCharArray();
         char chara = charArray[0];
-        HashMap<Character, Character> custCipher =  custRot(chara,c);
+        HashMap<Character, Character> custCipher =  custRot(s,c);
 
         char[] returnString = new char[s.length()];
         for (int i = 0; i < charArray.length; i++) {
-            if (!custCipher.containsValue(charArray[i])) {
+            if (!custCipher.containsKey(charArray[i])) {
                 returnString[i] = (charArray[i]);
                 continue;
             }
