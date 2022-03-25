@@ -5,48 +5,48 @@ import static org.junit.Assert.*;
 public class ROT13Test {
 
 
-    @Test
-    public void rotateStringTest0() {
-        // Given
-        String s1 = "ABCDEF";
-        String s2 = "ABCDEF";
-
-        // When
-        ROT13 cipher = new ROT13();
-        String actual = cipher.rotate(s1, 'A');
-
-        // Then
-        assertTrue(actual.equals(s2));
-    }
-
-    @Test
-    public void rotateStringTest1() {
-        // Given
-        String s1 = "ABCDEF";
-        String s2 = "DEFABC";
-
-        // When
-        ROT13 cipher = new ROT13();
-        String actual = cipher.rotate(s1, 'D');
-
-        // Then
-        assertTrue(actual.equals(s2));
-    }
-
-    @Test
-    public void rotateStringTest2() {
-        // Given
-        String s1 = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-        String s2 = "NOPQRSTUVWXYZABCDEFGHIJKLM";
-
-        // When
-        ROT13 cipher = new ROT13();
-        String actual = cipher.rotate(s1, 'N');
-        System.out.println(s1);
-        System.out.println(actual);
-        // Then
-        assertTrue(actual.equals(s2));
-    }
+//    @Test
+//    public void rotateStringTest0() {
+//        // Given
+//        String s1 = "ABCDEF";
+//        String s2 = "ABCDEF";
+//
+//        // When
+//        ROT13 cipher = new ROT13();
+//        String actual = cipher.rotate(s1, 'A');
+//
+//        // Then
+//        assertTrue(actual.equals(s2));
+//    }
+//
+//    @Test
+//    public void rotateStringTest1() {
+//        // Given
+//        String s1 = "ABCDEF";
+//        String s2 = "DEFABC";
+//
+//        // When
+//        ROT13 cipher = new ROT13();
+//        String actual = cipher.rotate(s1, 'D');
+//
+//        // Then
+//        assertTrue(actual.equals(s2));
+//    }
+//
+//    @Test
+//    public void rotateStringTest2() {
+//        // Given
+//        String s1 = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+//        String s2 = "NOPQRSTUVWXYZABCDEFGHIJKLM";
+//
+//        // When
+//        ROT13 cipher = new ROT13();
+//        String actual = cipher.rotate(s1, 'N');
+//        System.out.println(s1);
+//        System.out.println(actual);
+//        // Then
+//        assertTrue(actual.equals(s2));
+//    }
 
     @Test
     public void cryptTest1() {
